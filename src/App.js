@@ -7,35 +7,56 @@ const Index = () =>{
 //Really it would be this
 //const carsData = useCarDataQuery()
 
-const carsData = [
+const carsData = 
   {
-    "make": "Mazda",
-    "model": "M3"
-  },
-  {
-    "make": "Hyundai",
-      "model": "Elantra"
-  }
-];
+  "title":"hey this is a title",
+  "secondThing": "hey this is another thing",
+  "cars":[
+    {
+      "make": "Mazda",
+      "model": "M3"
+    },
+    {
+      "make": "Hyundai",
+        "model": "Elantra"
+    }
+  ],
+  "thirdThing": "yet another thing"
+}
+
 
 function prepareData(data){
    
     const finalData = [];
-    data.map((item, i) => {
+   
 
       finalData.push({
+        title: data?.title,
+        secondThing: data?.secondThing,
+        thirdThing: data?.thirdThing
+      })
+
+    
+    return finalData;
+  }
+  function prepareData2(data){
+   
+    const finalData2 =[];
+    data.cars.map((item, i) => {
+
+      finalData2.push({
         index: i,
-        model: item?.model,
-        make: item?.make
+        make: item?.make,
+        model: item?.model
       })
 
     });
-    return finalData;
+    return finalData2;
   }
 
     return(
         
-        <Cars data={prepareData(carsData)}  />
+        <Cars nonMappedData={prepareData(carsData)} mappedData={prepareData2(carsData)}  />
    
     )
 }

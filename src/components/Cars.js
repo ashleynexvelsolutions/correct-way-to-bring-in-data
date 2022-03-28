@@ -2,9 +2,19 @@ import React from 'react'
 
 
 const Cars = (props) => {
+  
 return(
     <>
-    {props.data.map(car =>{
+    <p>
+    {props.nonMappedData[0].title}
+    </p>
+    <p>
+    {props.nonMappedData[0].secondThing}
+    </p>
+    <p>
+    {props.nonMappedData[0].thirdThing}
+    </p>
+    {props.mappedData.map(car =>{
         return(
             <>
  <p>
