@@ -25,30 +25,25 @@ const carsData =
 }
 
 const finalData = {
-  title: carsData?.title,
-  secondThing: carsData?.secondThing,
-  thirdThing: carsData?.thirdThing
+  title: carsData.title,
+  secondThing: carsData.secondThing,
+  thirdThing: carsData.thirdThing,
+  cars: carsData.cars.length &&
+        carsData.cars.map((car, i)=>{
+          return{
+            index: i,
+            make: car.make,
+            model: car.model
+          }
+        })
 }
 
 
-  function prepareData(data){
-   
-    const finalData2 =[];
-    data.cars.map((item, i) => {
 
-      finalData2.push({
-        index: i,
-        make: item?.make,
-        model: item?.model
-      })
-
-    });
-    return finalData2;
-  }
 
     return(
         
-        <Cars nonMappedData={finalData} mappedData={prepareData(carsData)}  />
+        <Cars data={finalData}  />
    
     )
 }

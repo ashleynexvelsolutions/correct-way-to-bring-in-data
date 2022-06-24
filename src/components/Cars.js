@@ -6,15 +6,15 @@ const Cars = (props) => {
 return(
     <>
     <p>
-    {props.nonMappedData.title}
+    {props.data.title}
     </p>
     <p>
-    {props.nonMappedData.secondThing}
+    {props.data.secondThing}
     </p>
     <p>
-    {props.nonMappedData.thirdThing}
+    {props.data.thirdThing}
     </p>
-    {props.mappedData.map(car =>{
+    {props.data.cars.map(car =>{
         return(
             <>
  <p>
